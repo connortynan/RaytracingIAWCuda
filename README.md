@@ -16,5 +16,6 @@ Next steps are to continue with Peter Shirley's "The Next Week" with the  [RayTr
 
 
 # Current output:
-![out.png](https://github.com/connortynan/RaytracingIAWCuda/blob/main/out.png)
+
+![Raytraced scene of 3 large balls of different materials surrounded by smaller balls, some motion blurred showing falling to the ground](https://github.com/connortynan/RaytracingIAWCuda/blob/main/out.png "out.png")
 
