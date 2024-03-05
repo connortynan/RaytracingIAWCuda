@@ -4,11 +4,8 @@ import os
 
 
 def ppmtopng(filepath: str) -> None:
-    if os.path.isfile(filepath+".ppm"):
-        with Image.open(filepath+".ppm") as im:
-            im.convert("RGB").save(filepath+".png")
-    else:
-        print(f"file {filepath}.ppm not found!")
+    with Image.open(filepath+".ppm") as im:
+        im.convert("RGB").save(filepath+".png")
 
 
 def main(args):

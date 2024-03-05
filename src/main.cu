@@ -200,17 +200,18 @@ int main() {
     std::cerr << "took " << timer_seconds << " seconds.\n";
 
     // Output FB as Image
-    std::cout << "P3\n" << nx << " " << ny << "\n255\n";
+    FILE* ppmFile = fopen("out.ppm", "w");
+    fprintf(ppmFile, "P3\n%d %d\n255\n", nx, ny);
     for (int j = ny-1; j >= 0; j--) {
         for (int i = 0; i < nx; i++) {
             size_t pixel_index = j*nx + i;
             int ir = int(255.99*fb[pixel_index].r());
             int ig = int(255.99*fb[pixel_index].g());
             int ib = int(255.99*fb[pixel_index].b());
-            std::cout << ir << " " << ig << " " << ib << "\n";
+            fprintf(ppmFile, "%d %d %d\n", ir, ig, ib);
         }
     }
-
+    fclose(ppmFile);
     std::cerr << "Finished writing to file\n";
 
     // clean up
